@@ -1,0 +1,282 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  color: #fff;
+  background: #000;
+}
+
+/* HEADER */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #0d0d0d;
+  padding: 15px 30px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  border-bottom: 2px solid #1a73e8;
+}
+
+header .logo img {
+  height: 75px; 
+  width: auto;  
+  transition: transform 0.3s; 
+}
+
+
+header .logo img:hover {
+  transform: scale(1.1); 
+}
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #1a73e8;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #00cfff;
+}
+
+/* BOTÓN HAMBURGUESA */
+.menu-toggle {
+  display: none;
+  font-size: 28px;
+  color: #1a73e8;
+  cursor: pointer;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    background: #0d0d0d;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 220px;
+    display: none;
+    padding: 20px;
+    border-left: 2px solid #1a73e8;
+  }
+
+  nav ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+}
+
+/* SECCIONES */
+.section {
+  display: none;
+  padding: 120px 20px;
+  min-height: 100vh;
+  text-align: center;
+}
+
+.section.active {
+  display: block;
+}
+
+/* HOME */
+.hero h1 {
+  font-size: 3rem;
+  color: #fff;
+}
+
+.hero h1 span {
+  color: #1a73e8;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #ccc;
+}
+
+/* CARDS PRINCIPALES DEL HOME */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #111;
+  border: 1px solid #1a73e8;
+  border-radius: 10px;
+  padding: 30px;
+  width: 250px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card i {
+  font-size: 40px;
+  color: #00cfff;
+  margin-bottom: 15px;
+}
+
+.card h3 {
+  color: #fff;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px #1a73e8;
+}
+
+/* NUEVAS CARDS DESTACADAS DEL HOME */
+.home-highlights {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.highlight-card {
+  background: #111;
+  border: 1px solid #1a73e8;
+  border-radius: 15px;
+  padding: 25px 20px;
+  width: 250px;
+  text-align: center;
+  transition: transform 0.4s, box-shadow 0.4s, border-color 0.4s;
+}
+
+.highlight-card i {
+  font-size: 45px;
+  color: #1a73e8;
+  margin-bottom: 15px;
+  transition: color 0.4s, transform 0.4s;
+}
+
+.highlight-card h3 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+}
+
+.highlight-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.highlight-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 199, 255, 0.4);
+  border-color: #00cfff;
+}
+
+.highlight-card:hover i {
+  color: #00cfff;
+  transform: rotate(10deg) scale(1.1);
+}
+
+/* FORM MODERNO */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 450px;
+  margin: auto;
+  background: #111;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 199, 255, 0.3);
+  transition: transform 0.3s;
+}
+
+form:hover {
+  transform: translateY(-5px);
+}
+
+input, textarea {
+  padding: 15px;
+  border: 1px solid #1a73e8;
+  border-radius: 10px;
+  background: #0d0d0d;
+  color: #fff;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #00cfff;
+  box-shadow: 0 0 8px #00cfff;
+}
+
+textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+button {
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #1a73e8, #00cfff);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.4s, transform 0.2s;
+}
+
+button:hover {
+  background: linear-gradient(90deg, #00cfff, #1a73e8);
+  transform: scale(1.05);
+}
+
+/* FOOTER */
+footer {
+  background: #0d0d0d;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  border-top: 2px solid #1a73e8;
+}
+
+footer .social a {
+  color: #1a73e8;
+  margin: 0 10px;
+  font-size: 20px;
+  transition: color 0.3s;
+}
+
+footer .social a:hover {
+  color: #00cfff;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .highlight-card,
+  .card {
+    width: 80%;
+  }
+}

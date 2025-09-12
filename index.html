@@ -1,12 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SitioWeb</title>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon"> 
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Icomp</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fuente letra -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Iconos -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
-<body>   
-    <h1>Hola Zaaid</h1>
-    <img src="https://lumiere-a.akamaihd.net/v1/images/au_marvel_spiderman60th_hero_r_823e6bbf.jpeg?region=0,0,2400,1002" alt="Spiderman" width="600">
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="logo">
+      <img src="img/logo_of.png" alt="Icomp Logo">
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" data-section="home"><i class="fa fa-home"></i> Home</a></li>
+        <li><a href="#" data-section="about"><i class="fa fa-users"></i> Quienes Somos</a></li>
+        <li><a href="#" data-section="services"><i class="fa fa-cogs"></i> Servicios</a></li>
+        <li><a href="#" data-section="blog"><i class="fa fa-blog"></i> Blog</a></li>
+        <li><a href="#" data-section="contact"><i class="fa fa-envelope"></i> Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- SECCIONES -->
+  <main>
+    <section id="home" class="section active">
+      <div class="hero">
+        <h1>Bienvenido a <span>Icomp</span></h1>
+        <p>Creamos sistemas innovadores para tu negocio.</p>
+
+    <!--  CARDS DEL HOME -->
+        <div class="home-highlights">
+          <div class="highlight-card">
+            <i class="fa fa-camera"></i>
+            <h3>CCTV</h3>
+            <p>Soluciones de vigilancia modernas para proteger tu negocio.</p>
+          </div>
+          <div class="highlight-card">
+            <i class="fa fa-shield-alt"></i>
+            <h3>Seguridad Electrónica</h3>
+            <p>Sistemas electrónicos confiables para tu tranquilidad.</p>
+          </div>
+          <div class="highlight-card">
+            <i class="fa fa-phone"></i>
+            <h3>Voz y Datos</h3>
+            <p>Redes integradas para comunicación eficiente y segura.</p>
+          </div>
+          <div class="highlight-card">
+            <i class="fa fa-box"></i>
+            <h3>Compra-Venta de Equipo</h3>
+            <p>Adquiere o vende equipos de calidad con nosotros.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>Quienes Somos</h2>
+      <p>Somos una empresa dedicada al desarrollo de software a medida, orientada a la innovación y calidad.</p>
+    </section>
+
+    <section id="services" class="section">
+      <h2>Servicios</h2>
+      <ul>
+        <li>CCTV</li>
+        <li>SEG ELECTRONICA</li>
+        <li>VOZ/DATO</li>
+      </ul>
+    </section>
+
+    <section id="blog" class="section">
+      <h2>Blog</h2>
+      <p>Noticias y artículos sobre tecnología y desarrollo.</p>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Formulario de Contacto</h2>
+      <form>
+        <input type="text" placeholder="Nombre" required>
+        <input type="email" placeholder="Correo" required>
+        <textarea placeholder="Mensaje" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Icomp - Creamos sistemas</p>
+    <div class="social">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js"></script>
 </body>
 </html>
