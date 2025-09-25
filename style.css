@@ -365,4 +365,81 @@ footer .social a:hover {
   margin-bottom: 10px;
 }
 
+.blog-container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.blog-post {
+  display: flex;
+  background: #111;
+  border: 1px solid #1a73e8;
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 199, 255, 0.4);
+}
+
+.blog-post img {
+  width: 250px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-info {
+  padding: 20px;
+  text-align: left;
+  flex: 1;
+}
+
+.blog-info h3 {
+  color: #fff;
+  margin: 0 0 10px 0;
+}
+
+.blog-info .date {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.blog-info .summary {
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.blog-info a {
+  color: #1a73e8;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.blog-info a:hover {
+  color: #00cfff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .blog-post {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .blog-post img {
+    width: 100%;
+    height: 200px;
+  }
+
+  .blog-info {
+    padding: 15px;
+  }
+}
+
 
