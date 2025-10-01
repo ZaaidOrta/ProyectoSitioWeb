@@ -273,6 +273,34 @@ footer .social a:hover {
   color: #00cfff;
 }
 
+.privacy-section {
+  max-width: 900px;
+  margin: auto;
+  text-align: left;
+  padding: 50px 20px;
+  background: #111;
+  border: 1px solid #1a73e8;
+  border-radius: 15px;
+}
+
+.privacy-section h1 {
+  color: #1a73e8;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.privacy-section h2 {
+  color: #00cfff;
+  margin-top: 25px;
+}
+
+.privacy-section p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .highlight-card,
