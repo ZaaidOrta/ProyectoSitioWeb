@@ -34,3 +34,21 @@ document.addEventListener("DOMContentLoaded", () => {
     nav.classList.toggle("active");
   });
 });
+
+// INTERRUPTOR MODO DÍA/NOCHE CON GUARDADO
+const themeSwitch = document.getElementById("theme-switch");
+
+// Aplicar modo guardado al cargar
+if (localStorage.getItem("theme") === "light") {
+  document.body.classList.add("light-mode");
+  themeSwitch.checked = true;
+}
+
+// Cambiar y guardar el modo
+themeSwitch.addEventListener("change", () => {
+  document.body.classList.toggle("light-mode", themeSwitch.checked);
+  localStorage.setItem("theme", themeSwitch.checked ? "light" : "dark");
+});
+
+
+
