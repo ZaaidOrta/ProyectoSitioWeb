@@ -273,6 +273,35 @@ footer .social a:hover {
   color: #00cfff;
 }
 
+/* Aviso de privacidad */
+.privacy-section {
+  max-width: 900px;
+  margin: auto;
+  text-align: left;
+  padding: 50px 20px;
+  background: #111;
+  border: 1px solid #1a73e8;
+  border-radius: 15px;
+}
+
+.privacy-section h1 {
+  color: #1a73e8;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.privacy-section h2 {
+  color: #00cfff;
+  margin-top: 25px;
+}
+
+.privacy-section p {
+  color: #ccc;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+
+
 /* RESPONSIVE */
 @media (max-width: 768px) {
   .highlight-card,
@@ -442,4 +471,134 @@ footer .social a:hover {
   }
 }
 
+/* ======= INTERRUPTOR MODO DÍA/NOCHE ======= */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #1a73e8;
+  font-size: 20px;
+  cursor: pointer;
+  margin-left: 15px;
+}
 
+.theme-toggle input {
+  appearance: none;
+  width: 50px;
+  height: 25px;
+  background: #1a73e8;
+  border-radius: 20px;
+  position: relative;
+  outline: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.theme-toggle input::before {
+  content: "";
+  position: absolute;
+  width: 21px;
+  height: 21px;
+  background: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 0.5px;
+  transition: transform 0.3s;
+}
+
+.theme-toggle input:checked {
+  background: #00cfff;
+}
+
+.theme-toggle input:checked::before {
+  transform: translateX(25px);
+}
+
+/* ======= MENÚ CENTRADO ======= */
+header nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  list-style: none;
+}
+
+header nav ul li a {
+  color: inherit;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+header nav ul li a:hover {
+  color: #00cfff;
+}
+
+/* ======= MODO DÍA ======= */
+body.light-mode {
+  background: #f8f8f8;
+  color: #111;
+}
+
+body.light-mode header {
+  background: #fff;
+  border-bottom: 2px solid #1a73e8;
+}
+
+body.light-mode .section,
+body.light-mode .flip-card-front,
+body.light-mode .flip-card-back,
+body.light-mode .highlight-card,
+body.light-mode form,
+body.light-mode footer {
+  background: #fff;
+  color: #111;
+  border-color: #1a73e8;
+}
+
+body.light-mode p,
+body.light-mode h1,
+body.light-mode h2,
+body.light-mode h3,
+body.light-mode h4 {
+  color: #111;
+}
+
+body.light-mode .bienvenida h1,
+body.light-mode .bienvenida p {
+  color: #111 !important;
+}
+
+/* BLOG */
+body.light-mode .blog-post,
+body.light-mode .blog-content {
+  background: #fff;
+  color: #111;
+  border-color: #1a73e8;
+}
+
+/* FORMULARIO */
+body.light-mode form {
+  background: #fff;
+  color: #111;
+}
+
+body.light-mode form input,
+body.light-mode form textarea {
+  background: #f1f1f1;
+  color: #111;
+  border: 1px solid #1a73e8;
+}
+
+body.light-mode form button {
+  background: #1a73e8;
+  color: #fff;
+}
+
+body.light-mode form button:hover {
+  background: #00cfff;
+}
+
+/* TARJETAS DESTACADAS */
+body.light-mode .highlight-card:hover {
+  box-shadow: 0 10px 20px rgba(0, 199, 255, 0.4);
+}
