@@ -89,15 +89,24 @@ nav a:hover {
 
 /* SECCIONES */
 .section {
-  display: none;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.5s ease;
   padding: 120px 20px;
   min-height: 100vh;
   text-align: center;
 }
 
 .section.active {
-  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
 }
+
 
 /* HOME */
 .hero h1 {
@@ -602,3 +611,31 @@ body.light-mode form button:hover {
 body.light-mode .highlight-card:hover {
   box-shadow: 0 10px 20px rgba(0, 199, 255, 0.4);
 }
+
+/* ======= MODO DÍA PARA AVISO DE PRIVACIDAD ======= */
+body.light-mode .privacy-section {
+  background: #fff;
+  color: #111;
+  border: 1px solid #1a73e8;
+}
+
+body.light-mode .privacy-section h1 {
+  color: #1a73e8;
+}
+
+body.light-mode .privacy-section h2 {
+  color: #00cfff;
+}
+
+body.light-mode .privacy-section p {
+  color: #333;
+}
+
+/* Transición suave para las imágenes invertibles */ 
+.invertible { 
+  filter: invert(0); 
+  transition: filter 0.4s ease, brightness 0.4s ease; }
+
+/* Invertir colores para ciertas imagenes */ 
+body.light-mode .invertible { 
+  filter: invert(1) brightness(1.2); }
