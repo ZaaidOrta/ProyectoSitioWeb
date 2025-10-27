@@ -655,10 +655,9 @@ body.light-mode .invertible {
   margin-left: 20px;
   padding-left: 1em;
   list-style-position: inside;
-  color: #ccc; /* Asegura que los ítems tengan el mismo color */
 }
 
 .privacy-section ol li {
-  color: #ccc; /* Texto de cada ítem */
+  color: inherit; /* Texto de cada ítem */
   font-weight: normal; /* Evita negritas */
 }
