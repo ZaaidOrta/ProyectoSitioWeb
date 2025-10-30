@@ -465,6 +465,14 @@ footer .social a:hover {
   color: #00cfff;
 }
 
+/* Color de texto para el blog en modo claro*/
+body.light-mode .blog-info h3,
+body.light-mode .blog-info .date,
+body.light-mode .blog-info .summary {
+  color: #111;
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .blog-post {
@@ -633,21 +641,22 @@ body.light-mode .privacy-section p {
   color: #333;
 }
 
-/* Transición suave para las imágenes invertibles */ 
-.invertible { 
-  filter: invert(0); 
-  transition: filter 0.4s ease, brightness 0.4s ease; }
+  /* Imagen Panduit modo calro/oscuro */
+.invertible-reverse { 
+  filter: invert(1) brightness(1.5); 
+  transition: filter 0s ease, brightness 0.4s ease; 
+}
 
-/* Invertir colores para ciertas imagenes */ 
-body.light-mode .invertible { 
-  filter: invert(1) brightness(1.2); }
+body:not(.light-mode) .invertible-reverse { 
+  filter: invert(0) brightness(1);
+}
+
 
 /* Justificar texto del aviso de privacidad */
 .privacy-section {
   text-align: justify;
   text-justify: inter-word;
-  color: #ccc; /* Misma tonalidad que los párrafos normales */
-}
+  color: #ccc;}
 
 .privacy-section ol {
   text-align: justify;
@@ -658,6 +667,6 @@ body.light-mode .invertible {
 }
 
 .privacy-section ol li {
-  color: inherit; /* Texto de cada ítem */
-  font-weight: normal; /* Evita negritas */
+  color: inherit;
+  font-weight: normal;
 }
