@@ -26,29 +26,38 @@ document.addEventListener("DOMContentLoaded", () => {
   // Menu tipo toggle "celu"
   const nav = document.querySelector("nav ul");
   const toggle = document.createElement("div");
-  toggle.innerHTML = "&#9776;"; 
+  toggle.innerHTML = "&#9776;";
   toggle.classList.add("menu-toggle");
   document.querySelector("nav").appendChild(toggle);
 
   toggle.addEventListener("click", () => {
     nav.classList.toggle("active");
   });
+
+  // 🔆 Cambiar logos según tema (función)
+  function updateThemeImages() {
+    const isLight = document.body.classList.contains('light-mode');
+    document.querySelectorAll('.theme-image').forEach(img => {
+      img.src = isLight ? img.dataset.light : img.dataset.dark;
+    });
+  }
+
+  // INTERRUPTOR MODO DÍA/NOCHE CON GUARDADO
+  const themeSwitch = document.getElementById("theme-switch");
+
+  // Aplicar modo guardado al cargar
+  if (localStorage.getItem("theme") === "light") {
+    document.body.classList.add("light-mode");
+    themeSwitch.checked = true;
+  }
+
+  // ✅ Actualizar imágenes cuando se carga la página
+  updateThemeImages();
+
+  // Cambiar y guardar el modo
+  themeSwitch.addEventListener("change", () => {
+    document.body.classList.toggle("light-mode", themeSwitch.checked);
+    localStorage.setItem("theme", themeSwitch.checked ? "light" : "dark");
+    updateThemeImages(); // ✅ Actualizar imágenes al cambiar modo
+  });
 });
-
-// INTERRUPTOR MODO DÍA/NOCHE CON GUARDADO
-const themeSwitch = document.getElementById("theme-switch");
-
-// Aplicar modo guardado al cargar
-if (localStorage.getItem("theme") === "light") {
-  document.body.classList.add("light-mode");
-  themeSwitch.checked = true;
-}
-
-// Cambiar y guardar el modo
-themeSwitch.addEventListener("change", () => {
-  document.body.classList.toggle("light-mode", themeSwitch.checked);
-  localStorage.setItem("theme", themeSwitch.checked ? "light" : "dark");
-});
-
-
-

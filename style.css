@@ -89,15 +89,26 @@ nav a:hover {
 
 /* SECCIONES */
 .section {
-  display: none;
+  display: none; 
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transition: opacity 0.5s ease;
   padding: 120px 20px;
   min-height: 100vh;
   text-align: center;
 }
 
 .section.active {
-  display: block;
+  display: block; 
+  opacity: 1;
+  pointer-events: auto;
+  position: relative;
 }
+
 
 /* HOME */
 .hero h1 {
@@ -454,6 +465,14 @@ footer .social a:hover {
   color: #00cfff;
 }
 
+/* Color de texto para el blog en modo claro*/
+body.light-mode .blog-info h3,
+body.light-mode .blog-info .date,
+body.light-mode .blog-info .summary {
+  color: #111;
+}
+
+
 /* Responsive */
 @media (max-width: 768px) {
   .blog-post {
@@ -601,4 +620,53 @@ body.light-mode form button:hover {
 /* TARJETAS DESTACADAS */
 body.light-mode .highlight-card:hover {
   box-shadow: 0 10px 20px rgba(0, 199, 255, 0.4);
+}
+
+/* ======= MODO DÍA PARA AVISO DE PRIVACIDAD ======= */
+body.light-mode .privacy-section {
+  background: #fff;
+  color: #111;
+  border: 1px solid #1a73e8;
+}
+
+body.light-mode .privacy-section h1 {
+  color: #1a73e8;
+}
+
+body.light-mode .privacy-section h2 {
+  color: #00cfff;
+}
+
+body.light-mode .privacy-section p {
+  color: #333;
+}
+
+  /* Imagen Panduit modo calro/oscuro */
+.invertible-reverse { 
+  filter: invert(1) brightness(1.5); 
+  transition: filter 0s ease, brightness 0.4s ease; 
+}
+
+body:not(.light-mode) .invertible-reverse { 
+  filter: invert(0) brightness(1);
+}
+
+
+/* Justificar texto del aviso de privacidad */
+.privacy-section {
+  text-align: justify;
+  text-justify: inter-word;
+  color: #ccc;}
+
+.privacy-section ol {
+  text-align: justify;
+  text-justify: inter-word;
+  margin-left: 20px;
+  padding-left: 1em;
+  list-style-position: inside;
+}
+
+.privacy-section ol li {
+  color: inherit;
+  font-weight: normal;
 }
