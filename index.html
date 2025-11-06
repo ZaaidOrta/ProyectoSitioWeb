@@ -328,12 +328,12 @@
   <div class="blog-container">
 
     <div class="blog-post">
-      <img src="img/Seguridad.png" alt="Noticia CCTV">
+      <img src="img/Seguridad.png" alt="Noticia CCTV" id="blog_image">
       <div class="blog-info">
-        <h3>Últimas cámaras IP con IA</h3>
-        <p class="date">14 de septiembre, 2025</p>
-        <p class="summary">Conoce cómo la nueva generación de cámaras IP inteligentes mejora la seguridad de tu negocio y facilita la monitorización remota.</p>
-        <a href="#">Leer más</a>
+        <h3 id="blog_title">Últimas cámaras IP con IA</h3>
+        <p class="date" id="blog_date" >14 de septiembre, 2025</p>
+        <p class="summary" id="blog_summary" >Conoce cómo la nueva generación de cámaras IP inteligentes mejora la seguridad de tu negocio y facilita la monitorización remota.</p>
+        <a href="#" id="blog_link" >Leer más</a>
       </div>
     </div>
 
@@ -384,5 +384,37 @@
 
   <!-- Script -->
   <script src="script.js"></script>
+
+  <script>
+
+    const defaults = {
+            blog_title: 'Últimas cámaras IP con IA',
+            blog_date: '14 de septiembre, 2025',
+            blog_summary: 'Conoce cómo la nueva generación de cámaras IP inteligentes mejora la seguridad de tu negocio y facilita la monitorización remota.',
+            blog_image: 'img/Seguridad.png',
+            blog_link: '#'
+        };
+        
+        // Cargar contenido desde localStorage
+        window.onload = function() {
+            cargarContenido();
+        };
+        
+        function cargarContenido() {
+            document.getElementById('blog_title').textContent = localStorage.getItem('blog_title') || defaults.blog_title;
+            document.getElementById('blog_date').textContent = localStorage.getItem('blog_date') || defaults.blog_date;
+            document.getElementById('blog_summary').textContent = localStorage.getItem('blog_summary') || defaults.blog_summary;
+            document.getElementById('blog_image').src = localStorage.getItem('blog_image') || defaults.blog_image;
+            document.getElementById('blog_link').href = localStorage.getItem('blog_link') || defaults.blog_link;
+        }
+        
+        // Escuchar cambios en localStorage (útil si tienes ambas páginas abiertas)
+        window.addEventListener('storage', function(e) {
+            if (e.key && e.key.startsWith('blog')) {
+                cargarContenido();
+            }
+        });
+
+  </script>
 </body>
 </html>

@@ -1,0 +1,121 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+    <header>
+    <div class="logo">
+      <img src="img/logo_of.png" alt="Icomp Logo">
+    </div>
+    <h1 class="iniciar">Panel de Administrador</h2>
+    </header>  
+
+     <div class="container">
+        <h1>Editor de Blog</h1>
+        <p class="subtitle">Edita las entradas de tu blog</p>
+        
+        <a href="index.html" class="nav-link">← Ver Página Principal</a>
+        
+        <div class="alert success" id="alert">
+            ✓ Cambios guardados exitosamente
+        </div>
+
+        <div class="section-title">Sección Blog</div>
+
+        <div class="blog-entry">
+            <h4>Entrada de Blog #1</h4>
+            
+            <label for="blog_title">Título de la Seccion:</label>
+            <input type="text" id="blog_title" placeholder="Título de la entrada">
+            
+            <label for="blog_date">Fecha:</label>
+            <input type="text" id="blog_date" placeholder="14 de septiembre, 2025">
+            
+            <label for="blog_summary">Descripcion:</label>
+            <textarea id="blog_summary" placeholder="Resumen del artículo"></textarea>
+            
+            <label for="blog_image">Imagen:</label>
+            <input type="url" id="blog_image" placeholder="img/Seguridad.png">
+            
+            <label for="blog_link">Enlace:</label>
+            <input type="url" id="blog_link" placeholder="#">
+        </div>
+
+        <div class="button-group">
+            <button class="btn-save" onclick="guardarCambios()">Guardar Cambios del Blog</button>
+           <!-- <button class="btn-reset" onclick="resetearCambios()">Resetear Blog</button> --> 
+        </div>
+
+        <script>
+
+            const defaults = {
+            blog_title: 'Últimas cámaras IP con IA',
+            blog_date: '14 de septiembre, 2025',
+            blog_summary: 'Conoce cómo la nueva generación de cámaras IP inteligentes mejora la seguridad de tu negocio y facilita la monitorización remota.',
+            blog_image: 'img/Seguridad.png',
+            blog_link: '#'
+        };
+        
+        // Cargar datos guardados al iniciar
+        window.onload = function() {
+            cargarDatos();
+        };
+        
+        function cargarDatos() {
+            Object.keys(defaults).forEach(key => {
+                const value = localStorage.getItem(key) || defaults[key];
+                const element = document.getElementById(key);
+                if (element) {
+                    element.value = value;
+                }
+            });
+        }
+        
+        function guardarCambios() {
+            // Guardar todos los campos
+            Object.keys(defaults).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) {
+                    localStorage.setItem(key, element.value);
+                }
+            });
+            
+            // Mostrar alerta de éxito
+            const alert = document.getElementById('alert');
+            alert.classList.add('show');
+            
+            setTimeout(() => {
+                alert.classList.remove('show');
+            }, 3000);
+        }
+        
+        function resetearCambios() {
+            if (confirm('¿Estás seguro de que quieres resetear la entrada del blog?')) {
+                // Borrar las claves del blog
+                Object.keys(defaults).forEach(key => {
+                    localStorage.removeItem(key);
+                });
+                
+                cargarDatos();
+                
+                const alert = document.getElementById('alert');
+                alert.textContent = '✓ La entrada del blog ha sido reseteada';
+                alert.classList.add('show');
+                
+                setTimeout(() => {
+                    alert.classList.remove('show');
+                    alert.textContent = '✓ Cambios guardados exitosamente';
+                }, 3000);
+            }
+        }
+
+        </script>
+
+</body>
+</html>
