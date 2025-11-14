@@ -276,7 +276,7 @@ footer {
 footer .social a {
   color: #1a73e8;
   margin: 0 10px;
-  font-size: 20px;
+  font-size: 32px;
   transition: color 0.3s;
 }
 
@@ -670,3 +670,47 @@ body:not(.light-mode) .invertible-reverse {
   color: inherit;
   font-weight: normal;
 }
+/* CONTENEDOR AHORA EN COLUMNA */
+.contact-wrapper {
+  display: flex;
+  flex-direction: column; /* ← CAMBIO IMPORTANTE */
+  align-items: center;
+  gap: 40px;
+  margin-top: 40px;
+  width: 100%;
+}
+
+/* FORMULARIO */
+.contact-form {
+  width: 100%;
+  max-width: 450px;
+}
+
+/* MAPA */
+.map-card {
+  background: #111;
+  border: 1px solid #1a73e8;
+  padding: 25px;
+  border-radius: 15px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 8px 20px rgba(0, 199, 255, 0.3);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.map-card:hover {
+  transform: translateY(-5px);
+}
+
+.map-card h3 {
+  color: #1a73e8;
+  margin-bottom: 10px;
+}
+
+.map-address {
+  color: #ccc;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
