@@ -714,3 +714,19 @@ body:not(.light-mode) .invertible-reverse {
   font-size: 0.95rem;
 }
 
+/* ===== MODO DÍA – MAPA ===== */
+body.light-mode .map-card {
+  background: #fff;
+  border: 1px solid #1a73e8;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .map-card h3 {
+  color: #1a73e8;
+}
+
+body.light-mode .map-address {
+  color: #333;
+}
+
+
