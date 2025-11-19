@@ -1,121 +1,421 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Panel de Administrador</title>
     <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 
-    <header>
+<header>
     <div class="logo">
-      <img src="img/logo_of.png" alt="Icomp Logo">
+        <img src="img/logo_of.png" alt="Icomp Logo">
     </div>
-    <h1 class="iniciar">Panel de Administrador</h2>
-    </header>  
+    <h1 class="iniciar">Panel de Administrador</h1>
+</header>  
 
-     <div class="container">
-        <h1>Editor de Blog</h1>
-        <p class="subtitle">Edita las entradas de tu blog</p>
+<div class="container">
+    <h1>Editor de Contenido icomp</h1>
+    <p class="subtitle">Edita las entradas de tu Pagina</p>
+    
+    <a href="index.html" class="nav-link">← Ver Página Principal</a>
+
+    <div class="alert success" id="alert">
+        ✓ Cambios guardados exitosamente
+    </div>
+
+     <div class="tabs-menu">
+        <button class="tab-button active" onclick="cambiarTab('inicio')">Inicio</button>
+        <button class="tab-button" onclick="cambiarTab('quienes-somos')">Quiénes Somos</button>
+        <button class="tab-button" onclick="cambiarTab('servicios')">Servicios</button>
+        <button class="tab-button" onclick="cambiarTab('blog')">Entradas de Blog</button>
+    </div>
+
+    <div id="tab-inicio" class="tab-content active">
+        <div class="section-title">Sección Inicio</div>
         
-        <a href="index.html" class="nav-link">← Ver Página Principal</a>
+        <div class="content-section">
+            <h3>Contenido Principal</h3>
+            
+            <label for="inicio_titulo">Título Principal:</label>
+            <input type="text" id="inicio_titulo" placeholder="Bienvenido a Icomp">
+            
+            <label for="inicio_subtitulo">Subtítulo:</label>
+            <input type="text" id="inicio_subtitulo" placeholder="Soluciones tecnológicas para tu empresa">
+            
+            <label for="inicio_descripcion">Descripción:</label>
+            <textarea id="inicio_descripcion" placeholder="Descripción de la empresa..."></textarea>
+            
+            <label>Imagen Principal:</label>
+            <label class="upload-button">📁 Seleccionar Imagen</label>
+            <input type="file" id="inicio_image_file" accept="image/*" onchange="handleImageUpload(event, 'inicio')">
+            <div class="image-info" id="inicio_image_info"></div>
+            <img id="inicio_image_preview" class="image-preview" alt="Vista previa">
+        </div>
+    </div>
+
+     <div id="tab-quienes-somos" class="tab-content">
+        <div class="section-title">Sección Quiénes Somos</div>
         
-        <div class="alert success" id="alert">
-            ✓ Cambios guardados exitosamente
+        <div class="content-section">
+            <h3>Información de la Empresa</h3>
+            
+            <label for="quienes_titulo">Título:</label>
+            <input type="text" id="quienes_titulo" placeholder="Quiénes Somos">
+            
+            <label for="quienes_mision">Misión:</label>
+            <textarea id="quienes_mision" placeholder="Nuestra misión..."></textarea>
+            
+            <label for="quienes_vision">Visión:</label>
+            <textarea id="quienes_vision" placeholder="Nuestra visión..."></textarea>
+            
+            <label for="quienes_valores">Valores:</label>
+            <textarea id="quienes_valores" placeholder="Nuestros valores..."></textarea>
+            
+            <label for="quienes_historia">Historia:</label>
+            <textarea id="quienes_historia" placeholder="Nuestra historia..."></textarea>
+            
+            <label>Imagen de la Empresa:</label>
+            <label class="upload-button">📁 Seleccionar Imagen</label>
+            <input type="file" id="quienes_image_file" accept="image/*" onchange="handleImageUpload(event, 'quienes')">
+            <div class="image-info" id="quienes_image_info"></div>
+            <img id="quienes_image_preview" class="image-preview" alt="Vista previa">
+        </div>
+    </div>
+
+    <div id="tab-servicios" class="tab-content">
+        <div class="section-title">Sección Servicios</div>
+
+        
+       <div class="content-section">
+            <h3>Servicio 1 - Compra/Venta de Equipo</h3>
+            
+            <label for="servicio1_nombre">Nombre del Servicio:</label>
+            <input type="text" id="servicio1_nombre" placeholder="Compra/Venta de Equipo">
+            
+            <label for="servicio1_descripcion">Descripción:</label>
+            <textarea id="servicio1_descripcion" placeholder="Descripción del servicio..."></textarea>
+            
+            <label>Icono/Imagen:</label>
+            <label class="upload-button">📁 Seleccionar Imagen</label>
+            <input type="file" id="servicio1_image_file" accept="image/*" onchange="handleImageUpload(event, 'servicio1')">
+            <div class="image-info" id="servicio1_image_info"></div>
+            <img id="servicio1_image_preview" class="image-preview" alt="Vista previa">
         </div>
 
-        <div class="section-title">Sección Blog</div>
+            <br>
+            <hr>
+            <br>
 
-        <div class="blog-entry">
-            <h4>Entrada de Blog #1</h4>
+        <div class="content-section">
+            <h3>Servicio 2 - Seguridad Electrónica (CCTV)</h3>
             
-            <label for="blog_title">Título de la Seccion:</label>
-            <input type="text" id="blog_title" placeholder="Título de la entrada">
+            <label for="servicio2_nombre">Nombre del Servicio:</label>
+            <input type="text" id="servicio2_nombre" placeholder="Seguridad Electrónica">
             
-            <label for="blog_date">Fecha:</label>
-            <input type="text" id="blog_date" placeholder="14 de septiembre, 2025">
+            <label for="servicio2_descripcion">Descripción:</label>
+            <textarea id="servicio2_descripcion" placeholder="Descripción del servicio..."></textarea>
             
-            <label for="blog_summary">Descripcion:</label>
-            <textarea id="blog_summary" placeholder="Resumen del artículo"></textarea>
-            
-            <label for="blog_image">Imagen:</label>
-            <input type="url" id="blog_image" placeholder="img/Seguridad.png">
-            
-            <label for="blog_link">Enlace:</label>
-            <input type="url" id="blog_link" placeholder="#">
+            <label>Icono/Imagen:</label>
+            <label class="upload-button">📁 Seleccionar Imagen</label>
+            <input type="file" id="servicio2_image_file" accept="image/*" onchange="handleImageUpload(event, 'servicio2')">
+            <div class="image-info" id="servicio2_image_info"></div>
+            <img id="servicio2_image_preview" class="image-preview" alt="Vista previa">
         </div>
 
-        <div class="button-group">
-            <button class="btn-save" onclick="guardarCambios()">Guardar Cambios del Blog</button>
-           <!-- <button class="btn-reset" onclick="resetearCambios()">Resetear Blog</button> --> 
+            <br>
+            <hr>
+            <br>
+
+        <div class="content-section">
+            <h3>Servicio 3 - Voz y Datos</h3>
+            
+            <label for="servicio3_nombre">Nombre del Servicio:</label>
+            <input type="text" id="servicio3_nombre" placeholder="Voz y Datos">
+            
+            <label for="servicio3_descripcion">Descripción:</label>
+            <textarea id="servicio3_descripcion" placeholder="Descripción del servicio..."></textarea>
+            
+            <label>Icono/Imagen:</label>
+            <label class="upload-button">📁 Seleccionar Imagen</label>
+            <input type="file" id="servicio3_image_file" accept="image/*" onchange="handleImageUpload(event, 'servicio3')">
+            <div class="image-info" id="servicio3_image_info"></div>
+            <img id="servicio3_image_preview" class="image-preview" alt="Vista previa">
         </div>
 
-        <script>
+            <br>
+            <hr>
+            <br>
 
-            const defaults = {
-            blog_title: 'Últimas cámaras IP con IA',
-            blog_date: '14 de septiembre, 2025',
-            blog_summary: 'Conoce cómo la nueva generación de cámaras IP inteligentes mejora la seguridad de tu negocio y facilita la monitorización remota.',
-            blog_image: 'img/Seguridad.png',
-            blog_link: '#'
+        <div class="content-section">
+            <h3>Servicio 4 - Mantenimiento de Equipo</h3>
+            
+            <label for="servicio4_nombre">Nombre del Servicio:</label>
+            <input type="text" id="servicio4_nombre" placeholder="Mantenimiento de Equipo">
+            
+            <label for="servicio4_descripcion">Descripción:</label>
+            <textarea id="servicio4_descripcion" placeholder="Descripción del servicio..."></textarea>
+            
+            <label>Icono/Imagen:</label>
+            <label class="upload-button">📁 Seleccionar Imagen</label>
+            <input type="file" id="servicio4_image_file" accept="image/*" onchange="handleImageUpload(event, 'servicio4')">
+            <div class="image-info" id="servicio4_image_info"></div>
+            <img id="servicio4_image_preview" class="image-preview" alt="Vista previa">
+        </div>
+
+            <br>
+            <hr>
+            <br>
+
+        <div class="content-section">
+            <h3>Servicio 5 - Soporte Técnico</h3>
+            
+            <label for="servicio5_nombre">Nombre del Servicio:</label>
+            <input type="text" id="servicio5_nombre" placeholder="Soporte Técnico">
+            
+            <label for="servicio5_descripcion">Descripción:</label>
+            <textarea id="servicio5_descripcion" placeholder="Descripción del servicio..."></textarea>
+            
+            <label>Icono/Imagen:</label>
+            <label class="upload-button">📁 Seleccionar Imagen</label>
+            <input type="file" id="servicio5_image_file" accept="image/*" onchange="handleImageUpload(event, 'servicio5')">
+            <div class="image-info" id="servicio5_image_info"></div>
+            <img id="servicio5_image_preview" class="image-preview" alt="Vista previa">
+        </div>
+    </div>
+
+    <div id="tab-blog" class="tab-content">
+    <div class="section-title">Sección Blog</div>
+
+    <div class="blog-entry">
+        <h3>Entrada de Blog 1</h3>
+        
+        <label for="blog1_title">Título:</label>
+        <input type="text" id="blog1_title" placeholder="Título de la entrada">
+        
+        <label for="blog1_date">Fecha:</label>
+        <input type="text" id="blog1_date" placeholder="14 de septiembre, 2025">
+        
+        <label for="blog1_summary">Resumen:</label>
+        <textarea id="blog1_summary" placeholder="Resumen del artículo"></textarea>
+        
+        <label>Imagen:</label>
+        <label class="upload-button">Selecciona una nueva imagen</label>
+        <input type="file" id="blog1_image_file" accept="image/*" onchange="handleImageUpload(event, 'blog1')">
+        <div class="image-info" id="blog1_image_info"></div>
+        <img id="blog1_image_preview" class="image-preview" alt="Vista previa">
+        
+    </div>
+    
+    <!-- Blog Post 2 -->
+    <div class="blog-entry">
+        <h3>Entrada de Blog 2</h3>
+        
+        <label for="blog2_title">Título:</label>
+        <input type="text" id="blog2_title" placeholder="Título de la entrada">
+        
+        <label for="blog2_date">Fecha:</label>
+        <input type="text" id="blog2_date" placeholder="10 de septiembre, 2025">
+        
+        <label for="blog2_summary">Resumen:</label>
+        <textarea id="blog2_summary" placeholder="Resumen del artículo"></textarea>
+        
+        <label>Imagen:</label>
+        <label class="upload-button">Selecciona una nueva imagen</label>
+        <input type="file" id="blog2_image_file" accept="image/*" onchange="handleImageUpload(event, 'blog2')">
+        <div class="image-info" id="blog2_image_info"></div>
+        <img id="blog2_image_preview" class="image-preview" alt="Vista previa">
+
+    </div>
+    
+    <!-- Blog Post 3 -->
+    <div class="blog-entry">
+        <h3>Entrada de Blog 3</h3>
+        
+        <label for="blog3_title">Título:</label>
+        <input type="text" id="blog3_title" placeholder="Título de la entrada">
+        
+        <label for="blog3_date">Fecha:</label>
+        <input type="text" id="blog3_date" placeholder="5 de septiembre, 2025">
+        
+        <label for="blog3_summary">Resumen:</label>
+        <textarea id="blog3_summary" placeholder="Resumen del artículo"></textarea>
+        
+        <label>Imagen:</label>
+        <label class="upload-button">Selecciona una nueva imagen</label>
+        <input type="file" id="blog3_image_file" accept="image/*" onchange="handleImageUpload(event, 'blog3')">
+        <div class="image-info" id="blog3_image_info"></div>
+        <img id="blog3_image_preview" class="image-preview" alt="Vista previa">
+    </div>
+    </div>
+    <button class="save-button" onclick="guardarCambios()">Guardar Todos los Cambios</button>
+</div>
+
+<script>
+     const defaults = {
+
+            servicio1_nombre: 'Compra/Venta de Equipo',
+            servicio1_descripcion: 'Ofrecemos la compra y venta de equipos de cómputo nuevos y reacondicionados, garantizando calidad, compatibilidad y precios competitivos para empresas y particulares.',
+            servicio1_image: 'img/CompraVenta.png',
+            
+            servicio2_nombre: 'Seguridad Electrónica',
+            servicio2_descripcion: 'Instalamos y mantenemos sistemas de videovigilancia modernos, incluyendo cámaras IP, domo, bullet y PTZ, que permiten supervisar tus instalaciones en tiempo real y proteger tus activos con la última tecnología en CCTV.',
+            servicio2_image: 'img/CCTV.png',
+            
+            servicio3_nombre: 'Voz y Datos',
+            servicio3_descripcion: 'Diseñamos e implementamos redes integrales de voz y datos para tu empresa, asegurando conectividad confiable, eficiente y segura, adaptada a tus necesidades de comunicación.',
+            servicio3_image: 'img/VoIP.png',
+            
+            servicio4_nombre: 'Mantenimiento de Equipo',
+            servicio4_descripcion: 'Brindamos servicios de mantenimiento preventivo y correctivo de equipos de cómputo para maximizar su rendimiento, prolongar su vida útil y prevenir fallas críticas.',
+            servicio4_image: 'img/Mantenimiento prev y corr.png',
+            
+            servicio5_nombre: 'Soporte Técnico',
+            servicio5_descripcion: 'Ofrecemos soporte especializado en Instalación, configuración y resolución de problemas de sistemas operativos, asegurando que tus equipos funcionen de manera óptima y sin interrupciones.',
+            servicio5_image: 'img/Soporte tecnico.png',
+
+
+            blog1_title: 'Últimas cámaras IP con IA',
+            blog1_date: '14 de septiembre, 2025',
+            blog1_summary: 'Conoce cómo la nueva generación de cámaras IP inteligentes mejora la seguridad de tu negocio y facilita la monitorización remota.',
+            blog1_image: 'img/Seguridad.png',
+            blog1_link: '#',
+            
+            blog2_title: 'Optimización de redes de Voz y Datos',
+            blog2_date: '10 de septiembre, 2025',
+            blog2_summary: 'Aprende los mejores consejos para configurar redes empresariales seguras y de alto rendimiento.',
+            blog2_image: 'img/Voz y Datos.png',
+            blog2_link: '#',
+            
+            blog3_title: 'Mantenimiento Preventivo y Correctivo',
+            blog3_date: '5 de septiembre, 2025',
+            blog3_summary: 'Tips y procedimientos para mantener tus equipos funcionando al máximo rendimiento y prolongar su vida útil.',
+            blog3_image: 'img/Mantenimiento.png',
+            blog3_link: '#'
         };
         
-        // Cargar datos guardados al iniciar
+        let tempImages = {};
+        
+        // Cargar datos guardados cuando se carga la página
         window.onload = function() {
             cargarDatos();
         };
+
+        function cambiarTab(tabName) {
+        // Ocultar todas las pestañas
+        const tabs = document.querySelectorAll('.tab-content');
+        tabs.forEach(tab => tab.classList.remove('active'));
+        
+        // Desactivar todos los botones
+        const buttons = document.querySelectorAll('.tab-button');
+        buttons.forEach(btn => btn.classList.remove('active'));
+        
+        // Mostrar la pestaña seleccionada
+        document.getElementById('tab-' + tabName).classList.add('active');
+        
+        // Activar el botón seleccionado
+        event.target.classList.add('active');
+    }
         
         function cargarDatos() {
-            Object.keys(defaults).forEach(key => {
+        // Cargar todos los campos de texto
+        Object.keys(defaults).forEach(key => {
+            if (!key.includes('_image')) {
                 const value = localStorage.getItem(key) || defaults[key];
                 const element = document.getElementById(key);
                 if (element) {
                     element.value = value;
                 }
-            });
+            }
+        });
+        
+        // Cargar todas las imágenes
+        ['servicio1', 'servicio2', 'servicio3', 'servicio4', 'servicio5', 'blog1', 'blog2', 'blog3'].forEach(prefix => {
+            const imageData = localStorage.getItem(`${prefix}_image`);
+            if (imageData) {
+                const preview = document.getElementById(`${prefix}_image_preview`);
+                if (preview) {
+                    preview.src = imageData;
+                    preview.classList.add('show');
+                    
+                    const info = document.getElementById(`${prefix}_image_info`);
+                    if (info) {
+                        info.textContent = '✓ Imagen cargada';
+                    }
+                }
+            }
+        });
+    }
+        
+        function handleImageUpload(event, blogId) {
+            const file = event.target.files[0];
+            if (file) {
+                if (!file.type.startsWith('image/')) {
+                    alert('Por favor selecciona un archivo de imagen válido');
+                    return;
+                }
+                
+                if (file.size > 5 * 1024 * 1024) {
+                    alert('La imagen es muy grande. Por favor selecciona una imagen menor a 5MB');
+                    return;
+                }
+                
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    const imageData = e.target.result;
+                    tempImages[blogId] = imageData;
+                    
+                    const preview = document.getElementById(`${blogId}_image_preview`);
+                    preview.src = imageData;
+                    preview.classList.add('show');
+                    
+                    const info = document.getElementById(`${blogId}_image_info`);
+                    info.textContent = `📷 ${file.name}`;
+                };
+                
+                reader.readAsDataURL(file);
+            }
         }
         
         function guardarCambios() {
-            // Guardar todos los campos
-            Object.keys(defaults).forEach(key => {
-                const element = document.getElementById(key);
-                if (element) {
-                    localStorage.setItem(key, element.value);
+        try {
+            // Guardar todos los campos de texto/textarea
+            const allInputs = document.querySelectorAll('input[type="text"], textarea');
+            allInputs.forEach(input => {
+                if (input.id && !input.id.includes('_file')) {
+                    localStorage.setItem(input.id, input.value);
+                    console.log(`Guardado: ${input.id} = ${input.value}`);
                 }
             });
+            
+            // Guardar imágenes temporales
+            Object.keys(tempImages).forEach(prefix => {
+                localStorage.setItem(`${prefix}_image`, tempImages[prefix]);
+                console.log(`Imagen guardada: ${prefix}_image`);
+            });
+            
+            // Limpiar imágenes temporales
+            tempImages = {};
             
             // Mostrar alerta de éxito
             const alert = document.getElementById('alert');
             alert.classList.add('show');
+            window.scrollTo({top: 0, behavior: 'smooth'});
             
             setTimeout(() => {
                 alert.classList.remove('show');
             }, 3000);
+            
+            console.log('Todos los cambios guardados exitosamente');
+        } catch (error) {
+            console.error('Error al guardar:', error);
+            alert('Hubo un error al guardar los cambios. Por favor intenta de nuevo.');
         }
+    }
         
-        function resetearCambios() {
-            if (confirm('¿Estás seguro de que quieres resetear la entrada del blog?')) {
-                // Borrar las claves del blog
-                Object.keys(defaults).forEach(key => {
-                    localStorage.removeItem(key);
-                });
-                
-                cargarDatos();
-                
-                const alert = document.getElementById('alert');
-                alert.textContent = '✓ La entrada del blog ha sido reseteada';
-                alert.classList.add('show');
-                
-                setTimeout(() => {
-                    alert.classList.remove('show');
-                    alert.textContent = '✓ Cambios guardados exitosamente';
-                }, 3000);
-            }
-        }
-
-        </script>
+</script>
 
 </body>
 </html>
