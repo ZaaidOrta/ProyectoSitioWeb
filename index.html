@@ -26,6 +26,7 @@
         <li><a href="#" data-section="services"><i class="fa fa-cogs"></i> Servicios</a></li>
         <li><a href="#" data-section="blog"><i class="fa fa-blog"></i> Blog</a></li>
         <li><a href="#" data-section="contact"><i class="fa fa-envelope"></i> Contacto</a></li>
+        <li><a href="login.html" id="admin-link"><i class="fa fa-lock"></i> ¿Eres Administrador?</a></li>
       </ul>
     </nav>
   <!-- INTERRUPTOR MODO DÍA/NOCHE -->
@@ -35,6 +36,7 @@
   <i class="fa-solid fa-sun"></i>
 </div>
 </div>
+  <div class="menu-toggle" id="menu-toggle">☰</div>
   </header>
 
   <!-- SECCIONES -->
@@ -366,12 +368,19 @@
   <div class="contact-wrapper">
 
     <!-- FORMULARIO -->
-    <form class="contact-form">
-      <input type="text" placeholder="Nombre" required>
-      <input type="email" placeholder="Correo" required>
-      <textarea placeholder="Mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
+    <form class="contact-form" action="https://formsubmit.co/servicioacliente@four4coders.store" method="POST">
+  <input type="text" name="name" placeholder="Nombre" required>
+  <input type="email" name="email" placeholder="Correo" required>
+  <textarea name="message" placeholder="Mensaje" required></textarea>
+
+  <!-- Opcional: desactivar captcha -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- A dónde redirigir después de enviar -->
+  <input type="hidden" name="_next" value="https://four4coders.store/?enviado=1">
+
+  <button type="submit">Enviar</button>
+</form>
 
     <!-- MAPA -->
     <div class="map-card">
@@ -518,5 +527,14 @@
             }
         }
 </script>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("enviado") === "1") {
+    alert("Tu correo se ha enviado con éxito, espera nuestro mensaje");
+  }
+</script>
+
+
 </body>
 </html>

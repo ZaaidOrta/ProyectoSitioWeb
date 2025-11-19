@@ -20,19 +20,24 @@ document.addEventListener("DOMContentLoaded", () => {
       sections.forEach(section => section.classList.remove("active"));
       const sectionId = link.getAttribute("data-section");
       document.getElementById(sectionId).classList.add("active");
+      
+      // AÑADIR: Cerrar el menú después de hacer clic en un enlace
+      if (nav.classList.contains("active")) {
+          nav.classList.remove("active"); 
+      }
     });
   });
 
   // Menu tipo toggle "celu"
-  const nav = document.querySelector("nav ul");
-  const toggle = document.createElement("div");
-  toggle.innerHTML = "&#9776;";
-  toggle.classList.add("menu-toggle");
-  document.querySelector("nav").appendChild(toggle);
-
-  toggle.addEventListener("click", () => {
-    nav.classList.toggle("active");
-  });
+ const nav = document.querySelector("nav ul");
+  // MODIFICAR: Usar el elemento existente en HTML con ID
+  const toggle = document.getElementById("menu-toggle"); 
+  
+  if (toggle) { // Verificar que el elemento existe
+    toggle.addEventListener("click", () => {
+      nav.classList.toggle("active");
+    });
+  }
 
   // 🔆 Cambiar logos según tema (función)
   function updateThemeImages() {
