@@ -25,72 +25,19 @@
         ✓ Cambios guardados exitosamente
     </div>
 
-     <div class="tabs-menu">
-        <button class="tab-button active" onclick="cambiarTab('inicio')">Inicio</button>
-        <button class="tab-button" onclick="cambiarTab('quienes-somos')">Quiénes Somos</button>
-        <button class="tab-button" onclick="cambiarTab('servicios')">Servicios</button>
+    <!-- SOLO DEJAMOS DOS PESTAÑAS -->
+    <div class="tabs-menu">
+        <button class="tab-button active" onclick="cambiarTab('servicios')">Servicios</button>
         <button class="tab-button" onclick="cambiarTab('blog')">Entradas de Blog</button>
     </div>
 
-    <div id="tab-inicio" class="tab-content active">
-        <div class="section-title">Sección Inicio</div>
-        
-        <div class="content-section">
-            <h3>Contenido Principal</h3>
-            
-            <label for="inicio_titulo">Título Principal:</label>
-            <input type="text" id="inicio_titulo" placeholder="Bienvenido a Icomp">
-            
-            <label for="inicio_subtitulo">Subtítulo:</label>
-            <input type="text" id="inicio_subtitulo" placeholder="Soluciones tecnológicas para tu empresa">
-            
-            <label for="inicio_descripcion">Descripción:</label>
-            <textarea id="inicio_descripcion" placeholder="Descripción de la empresa..."></textarea>
-            
-            <label>Imagen Principal:</label>
-            <label class="upload-button">📁 Seleccionar Imagen</label>
-            <input type="file" id="inicio_image_file" accept="image/*" onchange="handleImageUpload(event, 'inicio')">
-            <div class="image-info" id="inicio_image_info"></div>
-            <img id="inicio_image_preview" class="image-preview" alt="Vista previa">
-        </div>
-    </div>
-
-     <div id="tab-quienes-somos" class="tab-content">
-        <div class="section-title">Sección Quiénes Somos</div>
-        
-        <div class="content-section">
-            <h3>Información de la Empresa</h3>
-            
-            <label for="quienes_titulo">Título:</label>
-            <input type="text" id="quienes_titulo" placeholder="Quiénes Somos">
-            
-            <label for="quienes_mision">Misión:</label>
-            <textarea id="quienes_mision" placeholder="Nuestra misión..."></textarea>
-            
-            <label for="quienes_vision">Visión:</label>
-            <textarea id="quienes_vision" placeholder="Nuestra visión..."></textarea>
-            
-            <label for="quienes_valores">Valores:</label>
-            <textarea id="quienes_valores" placeholder="Nuestros valores..."></textarea>
-            
-            <label for="quienes_historia">Historia:</label>
-            <textarea id="quienes_historia" placeholder="Nuestra historia..."></textarea>
-            
-            <label>Imagen de la Empresa:</label>
-            <label class="upload-button">📁 Seleccionar Imagen</label>
-            <input type="file" id="quienes_image_file" accept="image/*" onchange="handleImageUpload(event, 'quienes')">
-            <div class="image-info" id="quienes_image_info"></div>
-            <img id="quienes_image_preview" class="image-preview" alt="Vista previa">
-        </div>
-    </div>
-
-    <div id="tab-servicios" class="tab-content">
+    <!-- SECCIÓN SERVICIOS -->
+    <div id="tab-servicios" class="tab-content active">
         <div class="section-title">Sección Servicios</div>
 
-        
-       <div class="content-section">
+        <!-- Servicio 1 -->
+        <div class="content-section">
             <h3>Servicio 1 - Compra/Venta de Equipo</h3>
-            
             <label for="servicio1_nombre">Nombre del Servicio:</label>
             <input type="text" id="servicio1_nombre" placeholder="Compra/Venta de Equipo">
             
@@ -104,13 +51,11 @@
             <img id="servicio1_image_preview" class="image-preview" alt="Vista previa">
         </div>
 
-            <br>
-            <hr>
-            <br>
+        <br><hr><br>
 
+        <!-- Servicio 2 -->
         <div class="content-section">
             <h3>Servicio 2 - Seguridad Electrónica (CCTV)</h3>
-            
             <label for="servicio2_nombre">Nombre del Servicio:</label>
             <input type="text" id="servicio2_nombre" placeholder="Seguridad Electrónica">
             
@@ -124,13 +69,11 @@
             <img id="servicio2_image_preview" class="image-preview" alt="Vista previa">
         </div>
 
-            <br>
-            <hr>
-            <br>
+        <br><hr><br>
 
+        <!-- Servicio 3 -->
         <div class="content-section">
             <h3>Servicio 3 - Voz y Datos</h3>
-            
             <label for="servicio3_nombre">Nombre del Servicio:</label>
             <input type="text" id="servicio3_nombre" placeholder="Voz y Datos">
             
@@ -144,13 +87,11 @@
             <img id="servicio3_image_preview" class="image-preview" alt="Vista previa">
         </div>
 
-            <br>
-            <hr>
-            <br>
+        <br><hr><br>
 
+        <!-- Servicio 4 -->
         <div class="content-section">
             <h3>Servicio 4 - Mantenimiento de Equipo</h3>
-            
             <label for="servicio4_nombre">Nombre del Servicio:</label>
             <input type="text" id="servicio4_nombre" placeholder="Mantenimiento de Equipo">
             
@@ -164,13 +105,11 @@
             <img id="servicio4_image_preview" class="image-preview" alt="Vista previa">
         </div>
 
-            <br>
-            <hr>
-            <br>
+        <br><hr><br>
 
+        <!-- Servicio 5 -->
         <div class="content-section">
             <h3>Servicio 5 - Soporte Técnico</h3>
-            
             <label for="servicio5_nombre">Nombre del Servicio:</label>
             <input type="text" id="servicio5_nombre" placeholder="Soporte Técnico">
             
@@ -185,70 +124,59 @@
         </div>
     </div>
 
+    <!-- BLOG -->
     <div id="tab-blog" class="tab-content">
-    <div class="section-title">Sección Blog</div>
+        <div class="section-title">Sección Blog</div>
 
-    <div class="blog-entry">
-        <h3>Entrada de Blog 1</h3>
-        
-        <label for="blog1_title">Título:</label>
-        <input type="text" id="blog1_title" placeholder="Título de la entrada">
-        
-        <label for="blog1_date">Fecha:</label>
-        <input type="text" id="blog1_date" placeholder="14 de septiembre, 2025">
-        
-        <label for="blog1_summary">Resumen:</label>
-        <textarea id="blog1_summary" placeholder="Resumen del artículo"></textarea>
-        
-        <label>Imagen:</label>
-        <label class="upload-button">Selecciona una nueva imagen</label>
-        <input type="file" id="blog1_image_file" accept="image/*" onchange="handleImageUpload(event, 'blog1')">
-        <div class="image-info" id="blog1_image_info"></div>
-        <img id="blog1_image_preview" class="image-preview" alt="Vista previa">
-        
-    </div>
-    
-    <!-- Blog Post 2 -->
-    <div class="blog-entry">
-        <h3>Entrada de Blog 2</h3>
-        
-        <label for="blog2_title">Título:</label>
-        <input type="text" id="blog2_title" placeholder="Título de la entrada">
-        
-        <label for="blog2_date">Fecha:</label>
-        <input type="text" id="blog2_date" placeholder="10 de septiembre, 2025">
-        
-        <label for="blog2_summary">Resumen:</label>
-        <textarea id="blog2_summary" placeholder="Resumen del artículo"></textarea>
-        
-        <label>Imagen:</label>
-        <label class="upload-button">Selecciona una nueva imagen</label>
-        <input type="file" id="blog2_image_file" accept="image/*" onchange="handleImageUpload(event, 'blog2')">
-        <div class="image-info" id="blog2_image_info"></div>
-        <img id="blog2_image_preview" class="image-preview" alt="Vista previa">
+        <!-- Blog 1 -->
+        <div class="blog-entry">
+            <h3>Entrada de Blog 1</h3>
+            <label for="blog1_title">Título:</label>
+            <input type="text" id="blog1_title">
+            <label for="blog1_date">Fecha:</label>
+            <input type="text" id="blog1_date">
+            <label for="blog1_summary">Resumen:</label>
+            <textarea id="blog1_summary"></textarea>
+            <label>Imagen:</label>
+            <label class="upload-button">Selecciona una imagen</label>
+            <input type="file" id="blog1_image_file" accept="image/*" onchange="handleImageUpload(event, 'blog1')">
+            <div class="image-info" id="blog1_image_info"></div>
+            <img id="blog1_image_preview" class="image-preview">
+        </div>
 
+        <!-- Blog 2 -->
+        <div class="blog-entry">
+            <h3>Entrada de Blog 2</h3>
+            <label for="blog2_title">Título:</label>
+            <input type="text" id="blog2_title">
+            <label for="blog2_date">Fecha:</label>
+            <input type="text" id="blog2_date">
+            <label for="blog2_summary">Resumen:</label>
+            <textarea id="blog2_summary"></textarea>
+            <label>Imagen:</label>
+            <label class="upload-button">Selecciona una imagen</label>
+            <input type="file" id="blog2_image_file" accept="image/*" onchange="handleImageUpload(event, 'blog2')">
+            <div class="image-info" id="blog2_image_info"></div>
+            <img id="blog2_image_preview" class="image-preview">
+        </div>
+
+        <!-- Blog 3 -->
+        <div class="blog-entry">
+            <h3>Entrada de Blog 3</h3>
+            <label for="blog3_title">Título:</label>
+            <input type="text" id="blog3_title">
+            <label for="blog3_date">Fecha:</label>
+            <input type="text" id="blog3_date">
+            <label for="blog3_summary">Resumen:</label>
+            <textarea id="blog3_summary"></textarea>
+            <label>Imagen:</label>
+            <label class="upload-button">Selecciona una imagen</label>
+            <input type="file" id="blog3_image_file" accept="image/*" onchange="handleImageUpload(event, 'blog3')">
+            <div class="image-info" id="blog3_image_info"></div>
+            <img id="blog3_image_preview" class="image-preview">
+        </div>
     </div>
-    
-    <!-- Blog Post 3 -->
-    <div class="blog-entry">
-        <h3>Entrada de Blog 3</h3>
-        
-        <label for="blog3_title">Título:</label>
-        <input type="text" id="blog3_title" placeholder="Título de la entrada">
-        
-        <label for="blog3_date">Fecha:</label>
-        <input type="text" id="blog3_date" placeholder="5 de septiembre, 2025">
-        
-        <label for="blog3_summary">Resumen:</label>
-        <textarea id="blog3_summary" placeholder="Resumen del artículo"></textarea>
-        
-        <label>Imagen:</label>
-        <label class="upload-button">Selecciona una nueva imagen</label>
-        <input type="file" id="blog3_image_file" accept="image/*" onchange="handleImageUpload(event, 'blog3')">
-        <div class="image-info" id="blog3_image_info"></div>
-        <img id="blog3_image_preview" class="image-preview" alt="Vista previa">
-    </div>
-    </div>
+
     <button class="save-button" onclick="guardarCambios()">Guardar Todos los Cambios</button>
 </div>
 
