@@ -20,7 +20,7 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 1000;
+  z-index: 1001;
   border-bottom: 2px solid #1a73e8;
 }
 
@@ -58,6 +58,8 @@ nav a:hover {
 
 /* BOTÓN HAMBURGUESA */
 .menu-toggle {
+  z-index: 1002;
+  position: relative;
   display: none;
   font-size: 28px;
   color: #1a73e8;
@@ -65,25 +67,29 @@ nav a:hover {
 }
 
 /* RESPONSIVE */
+/* RESPONSIVE */
 @media (max-width: 768px) {
+  /* Mostrar el botón de la hamburguesa */
+  .menu-toggle {
+    display: block; 
+  }
+
   nav ul {
     flex-direction: column;
     background: #0d0d0d;
-    position: absolute;
-    top: 60px;
+    position: fixed; /* Cambiado a fixed para cubrir mejor */
+    top: 75px; /* Ajustado para estar debajo del header */
     right: 0;
-    width: 220px;
+    width: 250px; /* Un poco más de ancho */
+    height: 100vh; /* Ocupa todo el alto de la vista */
     display: none;
     padding: 20px;
     border-left: 2px solid #1a73e8;
+    z-index: 999; /* Asegurar que esté encima de todo */
   }
 
   nav ul.active {
     display: flex;
-  }
-
-  .menu-toggle {
-    display: block;
   }
 }
 
@@ -490,6 +496,11 @@ body.light-mode .blog-info .summary {
   }
 }
 
+header > div {
+    z-index: 1002; /* Más alto que el header y el nav ul */
+    position: relative; /* Necesario para que el z-index funcione correctamente */
+}
+
 /* ======= INTERRUPTOR MODO DÍA/NOCHE ======= */
 .theme-toggle {
   display: flex;
@@ -729,4 +740,106 @@ body.light-mode .map-address {
   color: #333;
 }
 
+/* ======================================= */
+/* ESTILOS DE MODO CLARO (light-mode)      */
+/* ======================================= */
 
+body.light-mode {
+  background: #f4f4f4; /* Fondo claro */
+  color: #111; /* Texto oscuro principal */
+}
+
+/* HEADER y NAVEGACIÓN */
+body.light-mode header {
+  background: #ffffff;
+  border-bottom: 2px solid #ccc;
+}
+
+body.light-mode nav a {
+  color: #1a73e8;
+}
+
+body.light-mode nav a:hover {
+  color: #000000;
+}
+
+/* Menú móvil en modo claro */
+@media (max-width: 768px) {
+  body.light-mode nav ul {
+    background: #ffffff;
+    border-left: 2px solid #ccc;
+  }
+}
+
+/* Títulos */
+body.light-mode h1, 
+body.light-mode h2,
+body.light-mode h3 {
+    color: #111;
+}
+
+body.light-mode .hero h1 span {
+    color: #1a73e8; /* Mantener el azul en el span */
+}
+
+/* Cards (Home, Servicios, Blog, Contacto) */
+body.light-mode .highlight-card,
+body.light-mode .flip-card-front,
+body.light-mode .flip-card-back,
+body.light-mode .blog-post,
+body.light-mode form {
+  background: #ffffff; 
+  border: 1px solid #ccc; 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+body.light-mode .highlight-card i {
+  color: #007bff; 
+}
+
+/* Texto dentro de las cards */
+body.light-mode .highlight-card p,
+body.light-mode .flip-card-back p,
+body.light-mode .blog-info .date,
+body.light-mode .blog-info .summary {
+  color: #555; 
+}
+
+/* Contenedor de "Quiénes Somos" */
+body.light-mode section#about > div:first-of-type > div {
+    border: 2px solid #1a73e8; 
+}
+
+/* FORMULARIO */
+body.light-mode input,
+body.light-mode textarea {
+  background: #f9f9f9; 
+  border-color: #ccc;
+  color: #111; 
+}
+
+body.light-mode input:focus, 
+body.light-mode textarea:focus {
+  box-shadow: 0 0 8px rgba(0, 199, 255, 0.5);
+}
+
+/* FOOTER */
+body.light-mode footer {
+  background: #333; 
+  color: #fff;
+  border-top: 2px solid #111;
+}
+
+body.light-mode footer .social a {
+  color: #00cfff;
+}
+
+/* IMAGENES INVERTIBLES (Para logos que son blancos en modo oscuro) */
+/* El logo de Panduit necesita esto */
+.invertible-reverse {
+    filter: invert(1);
+}
+
+body.light-mode .invertible-reverse {
+    filter: none; /* Quitar filtro en modo claro */
+}

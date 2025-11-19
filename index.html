@@ -26,6 +26,7 @@
         <li><a href="#" data-section="services"><i class="fa fa-cogs"></i> Servicios</a></li>
         <li><a href="#" data-section="blog"><i class="fa fa-blog"></i> Blog</a></li>
         <li><a href="#" data-section="contact"><i class="fa fa-envelope"></i> Contacto</a></li>
+        <li><a href="login.html" id="admin-link"><i class="fa fa-lock"></i> ¿Eres Administrador?</a></li>
       </ul>
     </nav>
   <!-- INTERRUPTOR MODO DÍA/NOCHE -->
@@ -35,6 +36,7 @@
   <i class="fa-solid fa-sun"></i>
 </div>
 </div>
+  <div class="menu-toggle" id="menu-toggle">☰</div>
   </header>
 
   <!-- SECCIONES -->
@@ -151,70 +153,70 @@
     <div class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <img src="img/CompraVenta.png" alt="Compra/Venta de Equipo">
-          <h3>Compra/Venta de Equipo</h3>
+          <img id="servicio1_image" src="img/CompraVenta.png" alt="Compra/Venta de Equipo">
+          <h3 id="servicio1_nombre">Compra/Venta de Equipo</h3>
         </div>
         <div class="flip-card-back">
-          <p>Ofrecemos la compra y venta de equipos de cómputo nuevos y reacondicionados,
+          <p id="servicio1_descripcion">Ofrecemos la compra y venta de equipos de cómputo nuevos y reacondicionados,
             garantizando calidad, compatibilidad y precios competitivos para empresas y particulares.</p>
         </div>
       </div>
     </div>
 
-    <!-- Seguridad Electrónica (CCTV) -->
+    <!-- Servicio 2: Seguridad Electrónica (CCTV) -->
     <div class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <img src="img/CCTV.png" alt="Seguridad Electrónica">
-          <h3>Seguridad Electrónica</h3>
+          <img id="servicio2_image" src="img/CCTV.png" alt="Seguridad Electrónica">
+          <h3 id="servicio2_nombre">Seguridad Electrónica</h3>
         </div>
         <div class="flip-card-back">
-          <p>Instalamos y mantenemos sistemas de videovigilancia modernos, incluyendo cámaras IP, 
+          <p id="servicio2_descripcion">Instalamos y mantenemos sistemas de videovigilancia modernos, incluyendo cámaras IP, 
             domo, bullet y PTZ, que permiten supervisar tus instalaciones en tiempo real y proteger tus 
             activos con la última tecnología en CCTV.</p>
         </div>
       </div>
     </div>
 
-    <!-- Instalación de Redes de Voz y Datos -->
+    <!-- Servicio 3: Instalación de Redes de Voz y Datos -->
     <div class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <img src="img/VoIP.png" alt="Voz y Datos">
-          <h3>Voz y Datos</h3>
+          <img id="servicio3_image" src="img/VoIP.png" alt="Voz y Datos">
+          <h3 id="servicio3_nombre">Voz y Datos</h3>
         </div>
         <div class="flip-card-back">
-          <p>Diseñamos e implementamos redes integrales de voz y datos  para tu empresa,
-            assegurando conectividad confiable, eficiente y segura, adaptada a tus
+          <p id="servicio3_descripcion">Diseñamos e implementamos redes integrales de voz y datos para tu empresa,
+            asegurando conectividad confiable, eficiente y segura, adaptada a tus
             necesidades de comunicación.</p>
         </div>
       </div>
     </div>
 
-    <!-- Mantenimiento de Equipo de Cómputo -->
+    <!-- Servicio 4: Mantenimiento de Equipo de Cómputo -->
     <div class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <img src="img/Mantenimiento prev y corr.png" alt="Mantenimiento de Equipo">
-          <h3>Mantenimiento de Equipo</h3>
+          <img id="servicio4_image" src="img/Mantenimiento prev y corr.png" alt="Mantenimiento de Equipo">
+          <h3 id="servicio4_nombre">Mantenimiento de Equipo</h3>
         </div>
         <div class="flip-card-back">
-          <p>Brindamos servicios de mantenimiento preventivo y correctivo de equipos
+          <p id="servicio4_descripcion">Brindamos servicios de mantenimiento preventivo y correctivo de equipos
             de cómputo para maximizar su rendimiento, prolongar su vida útil y prevenir
             fallas críticas.</p>
         </div>
       </div>
     </div>
 
-    <!-- Soporte Técnico a Sistemas Operativos -->
+    <!-- Servicio 5: Soporte Técnico a Sistemas Operativos -->
     <div class="flip-card">
       <div class="flip-card-inner">
         <div class="flip-card-front">
-          <img src="img/Soporte tecnico.png" alt="Soporte Técnico">
-          <h3>Soporte Técnico</h3>
+          <img id="servicio5_image" src="img/Soporte tecnico.png" alt="Soporte Técnico">
+          <h3 id="servicio5_nombre">Soporte Técnico</h3>
         </div>
         <div class="flip-card-back">
-          <p>Ofrecemos soporte especializado en Instalación, configuración y resolución
+          <p id="servicio5_descripcion">Ofrecemos soporte especializado en Instalación, configuración y resolución
             de problemas de sistemas operativos, asegurando que tus equipos funcionen
             de manera óptima y sin interrupciones.</p>
         </div>
@@ -330,34 +332,34 @@
   <div class="blog-container">
 
     <div class="blog-post">
-      <img src="img/Seguridad.png" alt="Noticia CCTV">
-      <div class="blog-info">
-        <h3>Últimas cámaras IP con IA</h3>
-        <p class="date">14 de septiembre, 2025</p>
-        <p class="summary">Conoce cómo la nueva generación de cámaras IP inteligentes mejora la seguridad de tu negocio y facilita la monitorización remota.</p>
-        <a href="#">Leer más</a>
-      </div>
-    </div>
+                <img id="blog1_image" src="img/Seguridad.png" alt="Noticia CCTV">
+                <div class="blog-info">
+                    <h3 id="blog1_title">Últimas cámaras IP con IA</h3>
+                    <p class="date" id="blog1_date">14 de septiembre, 2025</p>
+                    <p class="summary" id="blog1_summary">Conoce cómo la nueva generación de cámaras IP inteligentes mejora la seguridad de tu negocio y facilita la monitorización remota.</p>
+                    <a href="#" id="blog1_link">Leer más →</a>
+                </div>
+            </div>
 
     <div class="blog-post">
-      <img src="img/Voz y Datos.png" alt="Redes de Voz y Datos">
-      <div class="blog-info">
-        <h3>Optimización de redes de Voz y Datos</h3>
-        <p class="date">10 de septiembre, 2025</p>
-        <p class="summary">Aprende los mejores consejos para configurar redes empresariales seguras y de alto rendimiento.</p>
-        <a href="#">Leer más</a>
-      </div>
-    </div>
+                <img id="blog2_image" src="img/Voz y Datos.png" alt="Redes de Voz y Datos">
+                <div class="blog-info">
+                    <h3 id="blog2_title">Optimización de redes de Voz y Datos</h3>
+                    <p class="date" id="blog2_date">10 de septiembre, 2025</p>
+                    <p class="summary" id="blog2_summary">Aprende los mejores consejos para configurar redes empresariales seguras y de alto rendimiento.</p>
+                    <a href="#" id="blog2_link">Leer más →</a>
+                </div>
+            </div>
 
     <div class="blog-post">
-      <img src="img/Mantenimiento.png" alt="Mantenimiento de equipos">
-      <div class="blog-info">
-        <h3>Mantenimiento Preventivo y Correctivo</h3>
-        <p class="date">5 de septiembre, 2025</p>
-        <p class="summary">Tips y procedimientos para mantener tus equipos funcionando al máximo rendimiento y prolongar su vida útil.</p>
-        <a href="#">Leer más</a>
-      </div>
-    </div>
+                <img id="blog3_image" src="img/Mantenimiento.png" alt="Mantenimiento de equipos">
+                <div class="blog-info">
+                    <h3 id="blog3_title">Mantenimiento Preventivo y Correctivo</h3>
+                    <p class="date" id="blog3_date">5 de septiembre, 2025</p>
+                    <p class="summary" id="blog3_summary">Tips y procedimientos para mantener tus equipos funcionando al máximo rendimiento y prolongar su vida útil.</p>
+                    <a href="#" id="blog3_link">Leer más →</a>
+                </div>
+            </div>
   </div>
 </section>
   <section id="contact" class="section">
@@ -366,12 +368,19 @@
   <div class="contact-wrapper">
 
     <!-- FORMULARIO -->
-    <form class="contact-form">
-      <input type="text" placeholder="Nombre" required>
-      <input type="email" placeholder="Correo" required>
-      <textarea placeholder="Mensaje" required></textarea>
-      <button type="submit">Enviar</button>
-    </form>
+    <form class="contact-form" action="https://formsubmit.co/servicioacliente@four4coders.store" method="POST">
+  <input type="text" name="name" placeholder="Nombre" required>
+  <input type="email" name="email" placeholder="Correo" required>
+  <textarea name="message" placeholder="Mensaje" required></textarea>
+
+  <!-- Opcional: desactivar captcha -->
+  <input type="hidden" name="_captcha" value="false">
+
+  <!-- A dónde redirigir después de enviar -->
+  <input type="hidden" name="_next" value="https://four4coders.store/?enviado=1">
+
+  <button type="submit">Enviar</button>
+</form>
 
     <!-- MAPA -->
     <div class="map-card">
@@ -390,9 +399,6 @@
     loading="lazy" 
     referrerpolicy="no-referrer-when-downgrade">
   </iframe>
-
-
-
     </div>
 
   </div>
@@ -413,5 +419,122 @@
 
   <!-- Script -->
   <script src="script.js"></script>
+
+ <script>
+     const defaults = {
+
+            servicio1_nombre: 'Compra/Venta de Equipo',
+            servicio1_descripcion: 'Ofrecemos la compra y venta de equipos de cómputo nuevos y reacondicionados, garantizando calidad, compatibilidad y precios competitivos para empresas y particulares.',
+            servicio1_image: 'img/CompraVenta.png',
+            
+            servicio2_nombre: 'Seguridad Electrónica',
+            servicio2_descripcion: 'Instalamos y mantenemos sistemas de videovigilancia modernos, incluyendo cámaras IP, domo, bullet y PTZ, que permiten supervisar tus instalaciones en tiempo real y proteger tus activos con la última tecnología en CCTV.',
+            servicio2_image: 'img/CCTV.png',
+            
+            servicio3_nombre: 'Voz y Datos',
+            servicio3_descripcion: 'Diseñamos e implementamos redes integrales de voz y datos para tu empresa, asegurando conectividad confiable, eficiente y segura, adaptada a tus necesidades de comunicación.',
+            servicio3_image: 'img/VoIP.png',
+            
+            servicio4_nombre: 'Mantenimiento de Equipo',
+            servicio4_descripcion: 'Brindamos servicios de mantenimiento preventivo y correctivo de equipos de cómputo para maximizar su rendimiento, prolongar su vida útil y prevenir fallas críticas.',
+            servicio4_image: 'img/Mantenimiento prev y corr.png',
+            
+            servicio5_nombre: 'Soporte Técnico',
+            servicio5_descripcion: 'Ofrecemos soporte especializado en Instalación, configuración y resolución de problemas de sistemas operativos, asegurando que tus equipos funcionen de manera óptima y sin interrupciones.',
+            servicio5_image: 'img/Soporte tecnico.png',
+
+
+            blog1_title: 'Últimas cámaras IP con IA',
+            blog1_date: '14 de septiembre, 2025',
+            blog1_summary: 'Conoce cómo la nueva generación de cámaras IP inteligentes mejora la seguridad de tu negocio y facilita la monitorización remota.',
+            blog1_image: 'img/Seguridad.png',
+            blog1_link: '#',
+            
+            blog2_title: 'Optimización de redes de Voz y Datos',
+            blog2_date: '10 de septiembre, 2025',
+            blog2_summary: 'Aprende los mejores consejos para configurar redes empresariales seguras y de alto rendimiento.',
+            blog2_image: 'img/Voz y Datos.png',
+            blog2_link: '#',
+            
+            blog3_title: 'Mantenimiento Preventivo y Correctivo',
+            blog3_date: '5 de septiembre, 2025',
+            blog3_summary: 'Tips y procedimientos para mantener tus equipos funcionando al máximo rendimiento y prolongar su vida útil.',
+            blog3_image: 'img/Mantenimiento.png',
+            blog3_link: '#'
+
+        };
+        
+        // Cargar contenido cuando se carga la página
+        window.onload = function() {
+            cargarContenido();
+        };
+        
+        function cargarContenido() {
+            // Cargar Inicio
+          
+            
+            // Cargar Servicios
+            for (let i = 1; i <= 5; i++) {
+                const prefix = `servicio${i}_`;
+                cargarElemento(prefix + 'nombre', defaults[prefix + 'nombre'], 'textContent');
+                cargarElemento(prefix + 'descripcion', defaults[prefix + 'descripcion'], 'textContent');
+                cargarImagen(prefix + 'image', defaults[prefix + 'image']);
+            }
+            
+            // Cargar Blog
+            for (let i = 1; i <= 3; i++) {
+                const prefix = `blog${i}_`;
+                cargarElemento(prefix + 'title', defaults[prefix + 'title'], 'textContent');
+                cargarElemento(prefix + 'date', defaults[prefix + 'date'], 'textContent');
+                cargarElemento(prefix + 'summary', defaults[prefix + 'summary'], 'textContent');
+                cargarElemento(prefix + 'link', defaults[prefix + 'link'], 'href');
+                cargarImagen(prefix + 'image', defaults[prefix + 'image']);
+            }
+        }
+         function cargarElemento(id, defaultValue, property) {
+            const element = document.getElementById(id);
+            if (element) {
+                const valorGuardado = localStorage.getItem(id);
+                if (valorGuardado) {
+                    if (property === 'href') {
+                        element.href = valorGuardado;
+                    } else if (property === 'innerHTML') {
+                        element.innerHTML = valorGuardado;
+                    } else {
+                        element.textContent = valorGuardado;
+                    }
+                } else if (defaultValue) {
+                    if (property === 'href') {
+                        element.href = defaultValue;
+                    } else if (property === 'innerHTML') {
+                        element.innerHTML = defaultValue;
+                    } else {
+                        element.textContent = defaultValue;
+                    }
+                }
+            }
+        }
+        
+        function cargarImagen(id, defaultSrc) {
+            const imgElement = document.getElementById(id);
+            if (imgElement) {
+                const imagenGuardada = localStorage.getItem(id);
+                if (imagenGuardada) {
+                    imgElement.src = imagenGuardada;
+                } else if (defaultSrc) {
+                    imgElement.src = defaultSrc;
+                }
+            }
+        }
+</script>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("enviado") === "1") {
+    alert("Tu correo se ha enviado con éxito, espera nuestro mensaje");
+  }
+</script>
+
+
 </body>
 </html>
